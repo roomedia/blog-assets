@@ -1,5 +1,6 @@
 <!doctype html>
-<html><head><meta charset="utf-8"><title>naver publish</title></head>
+<html><head><meta charset="utf-8">
+<meta name="referrer" content="no-referrer"><title>naver publish</title></head>
 <body>
 <h2 id="status">issuing token...</h2>
 <script>
@@ -18,6 +19,7 @@ window.__cb = function() {
       setStatus('token ok, submitting...');
       var form = document.createElement('form');
       form.method = 'POST';
+      form.referrerPolicy = 'no-referrer';
       form.target = '_top';
       form.action = 'https://blog.naver.com/RabbitWrite.naver';
       var fields = {
